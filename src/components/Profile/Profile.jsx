@@ -1,17 +1,11 @@
 import MyPost from "./MyPosts/MyPosts";
 import style from "./Profile.module.css";
+import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
 const Profile = () => {
   return (
     <div>
-      <div>
-        <img
-          src="https://venngage-wordpress.s3.amazonaws.com/uploads/2018/09/Colorful-Geometric-Simple-Background-Image.jpg"
-          alt=""
-        />
-        Main Content
-      </div>
-      <div>ava + description</div>
+      <ProfileInfo />
       <MyPost />
     </div>
   );
