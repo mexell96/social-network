@@ -1,6 +1,6 @@
 import classes from "./Post.module.css";
 
-const Post = () => {
+const Post = (props) => {
   return (
     <div>
       <div className={classes.item}>
@@ -8,9 +8,10 @@ const Post = () => {
           src="https://iconape.com/wp-content/png_logo_vector/avatar.png"
           alt="avatar"
         />
-        post 1
+        {props.message}
         <div>
           <span>like</span>
+          {props.countLikes}
         </div>
       </div>
     </div>
