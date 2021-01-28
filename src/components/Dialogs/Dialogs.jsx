@@ -1,20 +1,33 @@
-import classes from "./Dialogs.module.css";
+import { NavLink } from "react-router-dom";
+import style from "./Dialogs.module.css";
 
 const Dialogs = (props) => {
   return (
-    <div className={classes.dialogs}>
-      <div className={classes.dialogsItems}>
-        <div className={classes.dialog + " " + classes.active}>Dimych</div>
-        <div className={classes.dialog}>Andrey</div>
-        <div className={classes.dialog}>Sveta</div>
-        <div className={classes.dialog}>Sasha</div>
-        <div className={classes.dialog}>Victor</div>
-        <div className={classes.dialog}>Valera</div>
+    <div className={style.dialogs}>
+      <div className={style.dialogsItems}>
+        <div className={style.dialog + " " + style.active}>
+          <NavLink to="/dialogs/1">Dimych</NavLink>
+        </div>
+        <div className={style.dialog}>
+          <NavLink to="/dialogs/2">Andrey</NavLink>
+        </div>
+        <div className={style.dialog}>
+          <NavLink to="/dialogs/3">Sveta</NavLink>
+        </div>
+        <div className={style.dialog}>
+          <NavLink to="/dialogs/4">Sasha</NavLink>
+        </div>
+        <div className={style.dialog}>
+          <NavLink to="/dialogs/5">Victor</NavLink>
+        </div>
+        <div className={style.dialog}>
+          <NavLink to="/dialogs/6">Valera</NavLink>
+        </div>
       </div>
-      <div className={classes.messages}>
-        <div className={classes.dialog}>Hi</div>
-        <div className={classes.dialog}>How is your it-kamasutra</div>
-        <div className={classes.dialog}>Yo</div>
+      <div className={style.messages}>
+        <div className={style.dialog}>Hi</div>
+        <div className={style.dialog}>How is your it-kamasutra</div>
+        <div className={style.dialog}>Yo</div>
       </div>
     </div>
   );

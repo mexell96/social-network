@@ -1,9 +1,9 @@
-import classes from "./Post.module.css";
+import style from "./Post.module.css";
 
 const Post = (props) => {
   return (
     <div>
-      <div className={classes.item}>
+      <div className={style.item}>
         <img
           src="https://iconape.com/wp-content/png_logo_vector/avatar.png"
           alt="avatar"

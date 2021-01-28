@@ -1,5 +1,5 @@
 import MyPost from "./MyPosts/MyPosts";
-import classes from "./Profile.module.css";
+import style from "./Profile.module.css";
 
 const Profile = () => {
   return (
