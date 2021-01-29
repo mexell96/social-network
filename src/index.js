@@ -1,8 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 
 let posts = [
   { id: 1, message: "Hi, how are you?", likesCount: 12 },
@@ -29,9 +29,9 @@ let messagesData = [
 
 ReactDOM.render(
   <React.StrictMode>
-    <App posts={posts} dialogsData={dialogsData} messagesData={messagesData}/>
+    <App posts={posts} dialogsData={dialogsData} messagesData={messagesData} />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
