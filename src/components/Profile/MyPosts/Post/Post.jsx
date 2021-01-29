@@ -5,7 +5,7 @@ const Post = (props) => {
     <div>
       <div className={style.item}>
         <img
-          src="https://iconape.com/wp-content/png_logo_vector/avatar.png"
+          src="https://cdn.iconscout.com/icon/free/png-256/avatar-370-456322.png"
           alt="avatar"
         />
         {props.message}
