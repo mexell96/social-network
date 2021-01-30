@@ -1,0 +1,15 @@
+.avatar {
+  width: 40px;
+  border-radius: 50%;
+}
+.userName {
+  font-size: 15px;
+}
+.friend {
+  margin: 5px;
+}
+.avatarCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

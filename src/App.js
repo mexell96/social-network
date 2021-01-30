@@ -7,13 +7,12 @@ import { Route } from "react-router-dom";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
-import Sidebar from "./components/Sidebar/Sidebar";
 
 const App = (props) => {
   return (
     <div className="app-wrapper">
       <Header />
-      <Navbar />
+      <Navbar state={props.state.sidebar}/>
       <div className="app-wrapper-content">
         {/* <Route path="/profile" component={Profile} /> */}
         <Route

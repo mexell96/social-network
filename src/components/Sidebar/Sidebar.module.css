@@ -1,3 +1,6 @@
-.sidebar {
-  background: lightyellow;
+.title {
+  color: white;
+}
+.friends {
+  display: flex;
 }
