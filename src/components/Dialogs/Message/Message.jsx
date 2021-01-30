@@ -1,7 +1,11 @@
-import style from "../Dialogs.module.css";
+import style from "./Message.module.css";
 
 const Message = (props) => {
-  return <div className={style.dialog}>{props.message}</div>;
+  return props.id % 2 === 0 ? (
+    <div className={style.dialog + " " + style.right}>{props.message}</div>
+  ) : (
+    <div className={style.dialog}>{props.message}</div>
+  );
 };
 
 export default Message;

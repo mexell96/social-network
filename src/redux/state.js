@@ -23,7 +23,13 @@ let state = {
       { id: 4, message: "Yo" },
     ],
   },
-  sitebar: {},
+  sidebar: {
+    friends: [
+      { id: 1, name: "Dimych" },
+      { id: 2, name: "Andrey" },
+      { id: 3, name: "Sveta" },
+    ],
+  },
 };
 
 export default state;

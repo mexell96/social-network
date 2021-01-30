@@ -13,6 +13,7 @@
 
 .messages {
   padding: 10px;
+  background-color: pink;
 }
 
 .messages .message {

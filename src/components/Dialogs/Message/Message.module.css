@@ -1,0 +1,10 @@
+.dialog {
+  background: lightcoral;
+  margin: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+}
+.right {
+  text-align: right;
+}
