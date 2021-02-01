@@ -1,6 +1,6 @@
 const ADD_POST = "ADD-POST";
 const UPDATE_NEW_POST_TEXT = "UPDATE_NEW_POST_TEXT";
-const ADD_MESSAGE = "ADD-MESSAGE";
+const SEND_MESSAGE = "ADD-MESSAGE";
 const UPDATE_NEW_MESSAGE_TEXT = "UPDATE-NEW-MESSAGE-TEXT";
 
 let store = {
@@ -29,7 +29,7 @@ let store = {
         { id: 3, message: "Yo" },
         { id: 4, message: "Yey" },
       ],
-      newMessageText: "message",
+      newMessageText: "",
     },
     sidebar: {
       friends: [
@@ -66,7 +66,7 @@ let store = {
     } else if (action.type === UPDATE_NEW_POST_TEXT) {
       this._state.profilePage.newPostText = action.newText;
       this._callSubscriber(this._state);
-    } else if (action.type === ADD_MESSAGE) {
+    } else if (action.type === SEND_MESSAGE) {
       let prevID = this._state.dialogsPage.messages[
         this._state.dialogsPage.messages.length - 1
       ].id;
@@ -92,9 +92,9 @@ export const updateNewPostTextActionCreator = (text) => ({
   newText: text,
 });
 
-export const addMessageActionCreator = () => ({ type: ADD_MESSAGE });
+export const sendMessageActionCreator = () => ({ type: SEND_MESSAGE });
 
-export const onMessageChangeActionCreator = (text) => ({
+export const updateNewMessageTextActionCreator = (text) => ({
   type: UPDATE_NEW_MESSAGE_TEXT,
   newText: text,
 });
