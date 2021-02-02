@@ -1,25 +1,25 @@
 const ADD_POST = "ADD-POST";
 const UPDATE_NEW_POST_TEXT = "UPDATE_NEW_POST_TEXT";
 
-const profileReducer = (state, action) => {
+const profileReducer = (stateProfilePage, action) => {
   console.log("profileReducer");
   switch (action.type) {
     case ADD_POST:
-      let prevID = state.posts[state.posts.length - 1].id;
+      let prevID = stateProfilePage.posts[stateProfilePage.posts.length - 1].id;
 
       let newPost = {
         id: ++prevID,
-        message: state.newPostText,
+        message: stateProfilePage.newPostText,
         likesCount: 0,
       };
-      state.posts.push(newPost);
-      state.newPostText = "";
-      return state;
+      stateProfilePage.posts.push(newPost);
+      stateProfilePage.newPostText = "";
+      return stateProfilePage;
     case UPDATE_NEW_POST_TEXT:
-      state.newPostText = action.newText;
-      return state;
+      stateProfilePage.newPostText = action.newText;
+      return stateProfilePage;
     default:
-      return state;
+      return stateProfilePage;
   }
 };
 

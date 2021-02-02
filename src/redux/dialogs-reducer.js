@@ -1,24 +1,25 @@
 const SEND_MESSAGE = "SEND-MESSAGE";
 const UPDATE_NEW_MESSAGE_TEXT = "UPDATE-NEW-MESSAGE-TEXT";
 
-const dialogsReducer = (state, action) => {
+const dialogsReducer = (stateDialogsPage, action) => {
   console.log("dialogsReducer");
   switch (action.type) {
     case UPDATE_NEW_MESSAGE_TEXT:
-      state.newMessageText = action.newText;
-      return state;
+      stateDialogsPage.newMessageText = action.newText;
+      return stateDialogsPage;
     case SEND_MESSAGE:
-      let prevID = state.messages[state.messages.length - 1].id;
+      let prevID =
+        stateDialogsPage.messages[stateDialogsPage.messages.length - 1].id;
       let newMessage = {
         id: ++prevID,
-        message: state.newMessageText,
+        message: stateDialogsPage.newMessageText,
       };
 
-      state.messages.push(newMessage);
-      state.newMessageText = "";
-      return state;
+      stateDialogsPage.messages.push(newMessage);
+      stateDialogsPage.newMessageText = "";
+      return stateDialogsPage;
     default:
-      return state;
+      return stateDialogsPage;
   }
 };
 

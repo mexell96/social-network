@@ -1,6 +1,6 @@
-const sidebarReducer = (state, action) => {
+const sidebarReducer = (stateSidebar, action) => {
   console.log("sidebarReducer");
-  return state;
+  return stateSidebar;
 };
 
 export default sidebarReducer;
