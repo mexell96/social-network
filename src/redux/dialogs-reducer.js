@@ -1,9 +1,8 @@
-const SEND_MESSAGE = "ADD-MESSAGE";
+const SEND_MESSAGE = "SEND-MESSAGE";
 const UPDATE_NEW_MESSAGE_TEXT = "UPDATE-NEW-MESSAGE-TEXT";
 
 const dialogsReducer = (state, action) => {
   console.log("dialogsReducer");
-  // eslint-disable-next-line default-case
   switch (action.type) {
     case UPDATE_NEW_MESSAGE_TEXT:
       state.newMessageText = action.newText;

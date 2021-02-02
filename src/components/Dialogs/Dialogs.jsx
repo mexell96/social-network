@@ -14,13 +14,14 @@ const Dialogs = (props) => {
   let messagesElements = props.dialogsPage.messages.map((m) => (
     <Message message={m.message} id={m.id} />
   ));
+  let newMessageText = props.dialogsPage.newMessageText;
 
-  let sendMessage = () => {
+  let onSendMessage = () => {
     props.dispatch(sendMessageActionCreator());
   };
 
-  let updateNewMessageText = (e) => {
-    let text = e.target.value;
+  let onNewMessageChange = (ev) => {
+    let text = ev.target.value;
     props.dispatch(updateNewMessageTextActionCreator(text));
   };
 
@@ -28,16 +29,18 @@ const Dialogs = (props) => {
     <div className={style.dialogs}>
       <div className={style.dialogsItems}>{dialogsElements}</div>
       <div className={style.messages}>
-        {messagesElements}
+        <div>{messagesElements}</div>
         <div>
-          <textarea
-            placeholder="Enter your message"
-            onChange={updateNewMessageText}
-            value={props.dialogsPage.newMessageText}
-          />
-        </div>
-        <div>
-          <button onClick={sendMessage}>Add message</button>
+          <div>
+            <textarea
+              placeholder="Enter your message"
+              onChange={onNewMessageChange}
+              value={newMessageText}
+            />
+          </div>
+          <div>
+            <button onClick={onSendMessage}>Add message</button>
+          </div>
         </div>
       </div>
     </div>

@@ -3,7 +3,6 @@ const UPDATE_NEW_POST_TEXT = "UPDATE_NEW_POST_TEXT";
 
 const profileReducer = (state, action) => {
   console.log("profileReducer");
-  // eslint-disable-next-line default-case
   switch (action.type) {
     case ADD_POST:
       let prevID = state.posts[state.posts.length - 1].id;
