@@ -21,8 +21,14 @@ let initialState = {
 
 const dialogsReducer = (stateDialogsPage = initialState, action) => {
   console.log("dialogsReducer");
+
   switch (action.type) {
-    case SEND_MESSAGE: {
+    case UPDATE_NEW_MESSAGE_TEXT:
+      return {
+        ...stateDialogsPage,
+        newMessageText: action.newText,
+      };
+    case SEND_MESSAGE:
       let prevID =
         stateDialogsPage.messages[stateDialogsPage.messages.length - 1].id;
       let newMessage = {
@@ -30,18 +36,11 @@ const dialogsReducer = (stateDialogsPage = initialState, action) => {
         message: stateDialogsPage.newMessageText,
       };
 
-      let stateCopy = { ...stateDialogsPage };
-      stateCopy.messages = [...stateDialogsPage.messages];
-      stateCopy.messages.push(newMessage);
-      stateCopy.newMessageText = "";
-      return stateCopy;
-    }
-    case UPDATE_NEW_MESSAGE_TEXT: {
-      let stateCopy = { ...stateDialogsPage };
-
-      stateCopy.newMessageText = action.newText;
-      return stateCopy;
-    }
+      return {
+        ...stateDialogsPage,
+        newMessageText: "",
+        messages: [...stateDialogsPage.messages, newMessage],
+      };
     default:
       return stateDialogsPage;
   }
