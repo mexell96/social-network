@@ -5,7 +5,7 @@ import React from "react";
 
 const Dialogs = (props) => {
   console.log(props, "Dialogs");
-  let state = props.dialogsPageProp;
+  let state = props.dialogsPage;
 
   let dialogsElements = state.dialogs.map((d) => (
     <DialogItem name={d.name} id={d.id} />
