@@ -14,7 +14,7 @@ let initialState = {
 const profileReducer = (stateProfilePage = initialState, action) => {
   console.log("profileReducer");
   switch (action.type) {
-    case ADD_POST:
+    case ADD_POST: {
       let prevID = stateProfilePage.posts[stateProfilePage.posts.length - 1].id;
 
       let newPost = {
@@ -22,12 +22,19 @@ const profileReducer = (stateProfilePage = initialState, action) => {
         message: stateProfilePage.newPostText,
         likesCount: 0,
       };
-      stateProfilePage.posts.push(newPost);
-      stateProfilePage.newPostText = "";
-      return stateProfilePage;
-    case UPDATE_NEW_POST_TEXT:
-      stateProfilePage.newPostText = action.newText;
-      return stateProfilePage;
+
+      let stateCopy = { ...stateProfilePage };
+      stateCopy.posts = [...stateProfilePage.posts];
+      stateCopy.posts.push(newPost);
+      stateCopy.newPostText = "";
+      return stateCopy;
+    }
+    case UPDATE_NEW_POST_TEXT: {
+      let stateCopy = { ...stateProfilePage };
+
+      stateCopy.newPostText = action.newText;
+      return stateCopy;
+    }
     default:
       return stateProfilePage;
   }
