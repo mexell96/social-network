@@ -4,17 +4,20 @@ import styles from "./Users.module.css";
 import userPhoto from "../../assets/images/806962_user_512x512.png";
 
 let Users = (props) => {
-  if (props.users.length === 0) {
-    axios
-      .get("https://social-network.samuraijs.com/api/1.0/users")
-      .then((response) => {
-        console.log(response.data.items);
-        props.setUsers(response.data.items);
-      });
-  }
+  let getUsers = () => {
+    if (props.users.length === 0) {
+      axios
+        .get("https://social-network.samuraijs.com/api/1.0/users")
+        .then((response) => {
+          console.log(response.data.items);
+          props.setUsers(response.data.items);
+        });
+    }
+  };
 
   return (
     <div>
+      <button onClick={getUsers}>Get users</button>
       {props.users.map((u) => (
         <div key={u.id}>
           <span>
