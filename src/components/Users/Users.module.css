@@ -4,4 +4,11 @@
 }
 .selectedPage {
   font-weight: bold;
+  border: 2px solid blue;
+}
+.cursor {
+  cursor: pointer;
+}
+span:hover {
+  background: rgb(229, 229, 255);
 }
