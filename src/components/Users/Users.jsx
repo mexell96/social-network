@@ -44,7 +44,7 @@ let Users = (props) => {
               {u.followed ? (
                 <button
                   onClick={() => {
-                    usersAPI.unfollowUser(u).then((response) => {
+                    usersAPI.unfollowUser(u.id).then((response) => {
                       if (response.data.resultCode === 0) {
                         props.unfollow(u.id);
                       }
