@@ -1,4 +1,3 @@
-// import React from "react";
 import { connect } from "react-redux";
 import {
   sendMessageActionCreator,
@@ -9,6 +8,7 @@ import Dialogs from "./Dialogs";
 const mapStateToProps = (state) => {
   return {
     dialogsPage: state.dialogsPage,
+    isAuth: state.auth.isAuth,
   };
 };
 

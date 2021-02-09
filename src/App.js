@@ -8,6 +8,7 @@ import News from "./components/News/News";
 import ProfileContainer from "./components/Profile/ProfileContainer";
 import Settings from "./components/Settings/Settings";
 import UsersContainer from "./components/Users/UsersContainer";
+import LoginPage from "./Login/Login";
 
 const App = (props) => {
   console.log(props, "APP");
@@ -19,6 +20,7 @@ const App = (props) => {
         <Route path="/dialogs" render={() => <DialogsContainer />} />
         <Route path="/profile/:userId?" render={() => <ProfileContainer />} />
         <Route path="/users" render={() => <UsersContainer />} />
+        <Route path="/login" render={() => <LoginPage />} />
         <Route path="/news" component={News} />
         <Route path="/music" component={Music} />
         <Route path="/settings" component={Settings} />
