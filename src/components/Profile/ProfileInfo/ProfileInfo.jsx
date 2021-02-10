@@ -15,11 +15,14 @@ const ProfileInfo = (props) => {
         <img
           src="https://venngage-wordpress.s3.amazonaws.com/uploads/2018/09/Colorful-Geometric-Simple-Background-Image.jpg"
           alt=""
-        />
+        />     
       </div> */}
       <div className={style.descriptionBlock}>
         <img src={props.profile.photos.large} alt="avatar" />
-        <ProfileStatus status={"Hello my friends"} />
+        <ProfileStatus
+          status={props.status}
+          updateStatus={props.updateStatus}
+        />
         <div>
           <div>"aboutMe": {props.profile.aboutMe}</div>
           <div>"facebook": {props.profile.contacts.facebook}</div>
