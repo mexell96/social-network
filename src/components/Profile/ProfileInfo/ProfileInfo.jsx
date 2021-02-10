@@ -1,5 +1,6 @@
 import Preloader from "../../common/preloader/Preloader";
 import style from "./ProfileInfo.module.css";
+import ProfileStatus from "./ProfileStatus";
 
 const ProfileInfo = (props) => {
   console.log(props.profile, "ProfileInfo");
@@ -10,15 +11,15 @@ const ProfileInfo = (props) => {
 
   return (
     <div>
-      <div>
+      {/* <div>
         <img
           src="https://venngage-wordpress.s3.amazonaws.com/uploads/2018/09/Colorful-Geometric-Simple-Background-Image.jpg"
           alt=""
         />
-      </div>
+      </div> */}
       <div className={style.descriptionBlock}>
         <img src={props.profile.photos.large} alt="avatar" />
-
+        <ProfileStatus status={"Hello my friends"} />
         <div>
           <div>"aboutMe": {props.profile.aboutMe}</div>
           <div>"facebook": {props.profile.contacts.facebook}</div>
