@@ -1,8 +1,9 @@
-import style from "./Dialogs.module.css";
-import DialogItem from "./DialogItem/DialogItem";
-import Message from "./Message/Message";
 import React from "react";
 import { Redirect } from "react-router";
+import { Field, reduxForm } from "redux-form";
+import DialogItem from "./DialogItem/DialogItem";
+import style from "./Dialogs.module.css";
+import Message from "./Message/Message";
 
 const Dialogs = (props) => {
   console.log(props, "Dialogs");
@@ -14,15 +15,9 @@ const Dialogs = (props) => {
   let messagesElements = state.messages.map((m) => (
     <Message key={m.id} message={m.message} id={m.id} />
   ));
-  let newMessageText = state.newMessageText;
 
-  let onSendMessage = () => {
-    props.sendMessageProp();
-  };
-
-  let onNewMessageChange = (ev) => {
-    let text = ev.target.value;
-    props.updateNewMessageTextProp(text);
+  let addNewMessage = (values) => {
+    props.sendMessage(values.newMessageText);
   };
 
   if (!props.isAuth) return <Redirect to={"/login"} />;
@@ -32,21 +27,31 @@ const Dialogs = (props) => {
       <div className={style.dialogsItems}>{dialogsElements}</div>
       <div className={style.messages}>
         <div>{messagesElements}</div>
-        <div>
-          <div>
-            <textarea
-              placeholder="Enter your message"
-              onChange={onNewMessageChange}
-              value={newMessageText}
-            />
-          </div>
-          <div>
-            <button onClick={onSendMessage}>Add message</button>
-          </div>
-        </div>
+        <AddMessageFormRedux onSubmit={addNewMessage} />
       </div>
     </div>
   );
 };
+
+const AddMessageForm = (props) => {
+  return (
+    <form onSubmit={props.handleSubmit}>
+      <div>
+        <Field
+          component={"textarea"}
+          name={"newMessageText"}
+          placeholder="Enter your message"
+        />
+      </div>
+      <div>
+        <button>Add message</button>
+      </div>
+    </form>
+  );
+};
+
+const AddMessageFormRedux = reduxForm({ form: "dialogAddMessageForm" })(
+  AddMessageForm
+);
 
 export default Dialogs;
