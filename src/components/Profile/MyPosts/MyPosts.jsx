@@ -1,16 +1,16 @@
 import React from "react";
 import { Field, reduxForm } from "redux-form";
-import style from "./MyPosts.module.css";
-import Post from "./Post/Post";
 import {
   maxLengthCreator,
   required,
 } from "../../../utils/validators/validator";
 import { Textarea } from "../../common/FormControls/FormsControls";
+import style from "./MyPosts.module.css";
+import Post from "./Post/Post";
 
 const maxLength10 = maxLengthCreator(10);
 
-const MyPosts = (props) => {
+const MyPosts = React.memo((props) => {
   console.log(props, "MyPosts");
   let postsElements = props.posts.map((p) => (
     <Post key={p.id} message={p.message} likesCount={p.likesCount} />
@@ -27,7 +27,7 @@ const MyPosts = (props) => {
       <div className={style.posts}>{postsElements}</div>
     </div>
   );
-};
+});
 
 const AddNewPostForm = (props) => {
   return (
