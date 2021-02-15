@@ -2,10 +2,3 @@
   width: 100px;
   height: 100px;
 }
-.selectedPage {
-  font-weight: bold;
-  border: 2px solid blue;
-}
-.cursor {
-  cursor: pointer;
-}
