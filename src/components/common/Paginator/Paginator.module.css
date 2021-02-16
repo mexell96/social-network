@@ -1,7 +1,11 @@
-.selectedPage {
-  font-weight: bold;
-  border: 2px solid blue;
+.paginator {
+  margin: 10px;
 }
-.cursor {
-  cursor: pointer;
+.pageNumber {
+  padding: 2px;
+  border: 1px solid grey;
+}
+.pageNumber.selectedPage {
+  font-weight: bold;
+  border-color: black;
 }
