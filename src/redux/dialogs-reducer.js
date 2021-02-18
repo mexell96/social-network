@@ -18,8 +18,6 @@ let initialState = {
 };
 
 const dialogsReducer = (state = initialState, action) => {
-  console.log("dialogsReducer");
-
   switch (action.type) {
     case SEND_MESSAGE:
       let prevID = state.messages[state.messages.length - 1].id;

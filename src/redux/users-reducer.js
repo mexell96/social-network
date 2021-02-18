@@ -18,8 +18,6 @@ let initialState = {
 };
 
 const usersReducer = (state = initialState, action) => {
-  console.log("usersReducer");
-
   switch (action.type) {
     case FOLLOW:
       return {

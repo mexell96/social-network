@@ -11,7 +11,6 @@ import Post from "./Post/Post";
 const maxLength10 = maxLengthCreator(10);
 
 const MyPosts = React.memo((props) => {
-  console.log(props, "MyPosts");
   let postsElements = props.posts.map((p) => (
     <Post key={p.id} message={p.message} likesCount={p.likesCount} />
   ));

@@ -6,7 +6,6 @@ import style from "./Dialogs.module.css";
 import Message from "./Message/Message";
 
 const Dialogs = (props) => {
-  console.log(props, "Dialogs");
   let state = props.dialogsPage;
 
   let dialogsElements = state.dialogs.map((d) => (

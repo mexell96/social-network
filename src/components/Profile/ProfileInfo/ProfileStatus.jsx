@@ -19,15 +19,12 @@ class ProfileStatus extends React.Component {
   };
 
   onStatusChange = (e) => {
-    console.log(e.currentTarget.value, "eeeeeeeeeeeeeeeeeeeeeee");
     this.setState({
       status: e.currentTarget.value,
     });
   };
 
   componentDidUpdate(prevProps, prevState) {
-    console.log(prevState, "cccccccccccccccccccc");
-    console.log(prevProps, "ppppppppppppppppppppp");
     if (prevProps.status !== this.props.status) {
       this.setState({
         status: this.props.status,

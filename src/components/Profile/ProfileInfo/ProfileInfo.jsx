@@ -13,8 +13,6 @@ const ProfileInfo = ({
   savePhoto,
   saveProfile,
 }) => {
-  console.log(profile, "ProfileInfo");
-
   let [editMode, setEditMode] = useState(false);
 
   if (!profile) {

@@ -7,7 +7,6 @@ let initialState = {
 };
 
 const sidebarReducer = (stateSidebar = initialState, action) => {
-  console.log("sidebarReducer");
   return stateSidebar;
 };
 

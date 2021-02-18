@@ -18,8 +18,6 @@ let initialState = {
 };
 
 const profileReducer = (state = initialState, action) => {
-  console.log("profileReducer");
-
   switch (action.type) {
     case ADD_POST: {
       let prevID = state.posts[state.posts.length - 1].id;
