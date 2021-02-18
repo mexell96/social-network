@@ -13,15 +13,15 @@ import { required } from "../utils/validators/validator";
 const LoginForm = ({ handleSubmit, error }) => {
   return (
     <form onSubmit={handleSubmit}>
-      {createField("Email", "email", Input, [required])}
-      {createField("Password", "password", Input, [required], {
+      {createField("Email", "email", [required], Input)}
+      {createField("Password", "password", [required], Input, {
         type: "password",
       })}
       {createField(
         null,
         "rememberMe",
-        Input,
         [],
+        Input,
         {
           type: "checkbox",
         },
